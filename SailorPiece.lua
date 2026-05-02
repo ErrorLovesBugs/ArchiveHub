@@ -1,4 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ErrorLovesBugs/ArchiveHub/refs/heads/main/PL_DETECT.ua"))()
 
 
 --[[
@@ -466,3 +465,5 @@ task.delay(0.2, function()
 end)
 
 print("🔐 Key System loaded!")
+task.wait(1)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ErrorLovesBugs/ArchiveHub/refs/heads/main/PL_DETECT.ua"))()
