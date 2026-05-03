@@ -382,33 +382,33 @@ checkBtn.MouseButton1Click:Connect(function()
         createTween(mainFrame, {Size = UDim2.new(0, 340, 0, 0)}, 0.3)
         task.wait(0.3)
         screenGui:Destroy()
+
         -- Table of supported Game IDs
-local SupportedIDs = {
-    [77747658251236] = true,
-    [130167267952199] = true
-}
+        local SupportedIDs = {
+            [77747658251236] = true,
+            [130167267952199] = true
+        }
 
-local SecretToken = "8f2d-a4e1-9c7b-662f-0e41-b9d3-5a72"
+        local SecretToken = "8f2d-a4e1-9c7b-662f-0e41-b9d3-5a72"
 
--- Check if the current Game ID is in the supported table
-if not SupportedIDs[game.PlaceId] then
-    -- If the game is NOT supported, kick the player
-    game:GetService("Players").LocalPlayer:Kick("Game Not Supported")
-    return
-end
+        -- Check if the current Game ID is in the supported table
+        if not SupportedIDs[game.PlaceId] then
+            -- If the game is NOT supported, kick the player
+            game:GetService("Players").LocalPlayer:Kick("Game Not Supported")
+            return
+        end
 
--- If the code reaches here, the game IS supported
-print("Game Supported! Initializing Key System...")
+        -- If the code reaches here, the game IS supported
+        print("Game Supported! Initializing Key System...")
 
--- [Your Key System UI Logic goes here]
+        -- After they pass the key, run the main script:
+        local success, result = pcall(function()
+            return loadstring(game:HttpGet("https://raw.githubusercontent.com/ErrorLovesBugs/ArchiveHub/refs/heads/main/SailorPiece.lua"))()
+        end)
 
--- After they pass the key, run the main script:
-local success, result = pcall(function()
-    return loadstring(game:HttpGet("https://raw.githubusercontent.com/ErrorLovesBugs/ArchiveHub/refs/heads/main/SailorPiece.lua"))()
-end)
-
-if success and type(result) == "function" then
-    result(SecretToken)    
+        if success and type(result) == "function" then
+            result(SecretToken)
+        end
     else
         setStatus("Invalid key! Try again.", Color3.fromRGB(255, 80, 80))
     end
