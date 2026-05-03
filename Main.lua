@@ -386,6 +386,11 @@ checkBtn.MouseButton1Click:Connect(function()
         -- Table of supported Game IDs
         local SupportedIDs = {
             [77747658251236] = true,
+            [98826438856089] = true,
+            [75159314259063] = true,
+            [99684056491472] = true,
+            [138368689293913] = true,
+            [96767841099256] = true,
             [130167267952199] = true
         }
 
